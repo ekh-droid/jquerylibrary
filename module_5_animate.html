@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery notes | animators</title>
+				<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+				<link rel="stylesheet" type="text/css" href="module_5_animate.css">
+	</head>
+	<body>
+			<div class="about">
+			<h1>JQUERY ANIMATE</h1>
+			<h4>this page has notes on jquery animate & some methods.</h4>
+			<div class="plant"></div>
+			</div>
+
+			<div class="box"></div>
+
+
+
+		<div id="navArrows">
+			<button id="left" class="navigationArrow">&larr;</button>
+			<button id="up" class="navigationArrow">&uarr;</button>
+			<button id="right" class="navigationArrow">&rarr;</button>
+			<button id="down" class="navigationArrow">&darr;</button>
+
+			</div>
+
+<!---\\\\\\\\\JQUERY \\\\\\\\
+\\\\\\\\\\\\\\ANIMATE METHODS\\\\\\\\-->
+<script>$(document).ready(function() {
+
+		$('#left').click(function() {
+			$('.box').animate({
+				//modify props
+				//click left arrow - move to left
+				//-= jquery for everytime you click it moves 2 the left
+				left: "-=40px",
+				fontSize: "+=2px"
+			}, function() {
+				//animation is complete
+		
+			});
+		});
+
+		$('#up').click(function() {
+			$('.box').animate({
+				
+				top: "-=40px",
+				fontSize: "-=2px"
+			}, function() {
+				//animation is complete
+		
+			});
+		});
+		$('#right').click(function() {
+			$('.box').animate({
+		//=+ increases the px value currently set at
+				left: "+=40px",
+
+			}, function() {
+				//animation is complete
+					$(this).text("");
+			});
+		});
+		$('#down').click(function() {
+			$('.box').animate({
+				
+				top: "+=40px",
+				opacity: "-=0.1p"
+			}, function() {
+				//animation is complete
+				$(this).text('this bedroom, like,totally sucks eggs');
+			});
+		});
+		$('.box').hover(function() {
+
+			$(this).text('lump off!! i am not your girlfriend!!');
+		}, function() {
+			$(this).text("");
+		});
+
+		$('.plant').hover(function() {
+
+			$(this).text('see elenalonestar.github.io for more code B-)');
+		}, function() {
+			$(this).text("");
+		});
+	});
+</script>
+
+	</body>
+</html>

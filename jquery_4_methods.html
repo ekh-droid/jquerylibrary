@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jquery notes | methods</title>
+			<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+			<link rel="stylesheet" type="text/css" href="methods.css">
+	</head>
+
+	<body>
+
+		<h1>jquery event methods</h1>
+
+		<div id="box"> nothin' to see here,.</div>
+
+		<br>
+
+		<form>
+			<label>Name<input type="text">
+			</label>
+			<input type="submit">
+		</form>
+
+
+<!-- \\\\\\\\\JQUERY\\\\\\\\\\\\\
+\\\\\\\\\\EVENT METHODS\\\\\\\\\\\\\
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\-->
+
+<script>
+$(document).ready(function(){
+ //click method
+		$('#box').click(function() {
+			alert('i dont think the box likes that');
+		});
+
+//blurr method, makes input lose focus
+		$("input").blur(function() {
+				//this refers to the input being chosen
+			if( $(this).val() == "" ) {
+		// "if this input is empty, do this"
+				$(this).css('border', 'solid 1px blue');
+				$('box').text('forgot to add text');
+			}
+		});
+//key method - when user presses a key down within input
+		$("input").keydown(function() {
+
+			if( $(this).val() !== "" ) {
+				$(this).css('border', 'solid 1px red');
+				$('#box').text('Hey! Thanks!');
+			}
+		});
+//hover method
+		$('#box').hover(function() {
+
+			$(this).text('0_______0');
+
+		}, function() {
+			$(this).text("");
+		}
+
+		);
+
+});
+
+</script>
+	</body>
+
+</html>
